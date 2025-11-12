@@ -29,43 +29,38 @@ const products = [
 
 const Products = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-secondary/30 to-background">
+    <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
-        <div className="inline-block px-6 py-2 bg-primary/10 rounded-full mb-4 animate-fade-in mx-auto block w-fit">
-          <span className="text-sm font-semibold tracking-wide uppercase text-primary">What We Offer</span>
-        </div>
-        
-        <h2 className="text-5xl md:text-6xl font-bold mb-4 text-center text-foreground animate-fade-in [animation-delay:100ms] opacity-0 [animation-fill-mode:forwards] bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-foreground animate-fade-in">
           Our Collection
         </h2>
-        <p className="text-center text-muted-foreground text-lg mb-14 max-w-2xl mx-auto animate-fade-in [animation-delay:200ms] opacity-0 [animation-fill-mode:forwards]">
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in [animation-delay:200ms] opacity-0 [animation-fill-mode:forwards]">
           Explore our diverse range of authentic souvenirs and keepsakes
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, index) => (
             <Card 
               key={index} 
-              className="group cursor-pointer overflow-hidden border-2 hover:border-primary transition-all duration-300 animate-scale-in hover:shadow-2xl bg-card hover:-translate-y-2"
+              className="group cursor-pointer overflow-hidden border-2 hover:border-primary transition-all duration-300 animate-scale-in hover:shadow-xl"
               style={{ 
                 animationDelay: `${index * 100 + 400}ms`,
                 opacity: 0,
                 animationFillMode: 'forwards'
               }}
             >
-              <div className="overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+              <div className="overflow-hidden">
                 <img 
                   src={product.image} 
                   alt={product.title}
-                  className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <CardContent className="p-7">
-                <h3 className="text-2xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">
                   {product.title}
                 </h3>
-                <p className="text-muted-foreground text-base">
+                <p className="text-muted-foreground">
                   {product.description}
                 </p>
               </CardContent>
