@@ -8,37 +8,28 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-accent/90 to-primary/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-accent/80"></div>
       </div>
       
       <div className="relative z-10 container mx-auto px-4 py-20 text-center text-primary-foreground">
-        <div className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 animate-fade-in">
-          <span className="text-sm font-semibold tracking-wide uppercase">Authentic Treasures Since 2004</span>
-        </div>
-        
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 animate-fade-in [animation-delay:200ms] opacity-0 [animation-fill-mode:forwards] drop-shadow-2xl">
-          Memories Worth<br />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-red-50 to-white">
-            Keeping
-          </span>
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+          Memories Worth Keeping
         </h1>
-        
-        <p className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto animate-fade-in [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards] drop-shadow-lg leading-relaxed">
+        <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:200ms] opacity-0 [animation-fill-mode:forwards]">
           Discover unique souvenirs and handcrafted treasures from around the world
         </p>
-        
-        <div className="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in [animation-delay:600ms] opacity-0 [animation-fill-mode:forwards]">
-          <Button size="lg" className="text-lg px-10 py-6 bg-white text-primary hover:bg-white/90 hover:scale-105 transition-all shadow-2xl font-semibold">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards]">
+          <Button size="lg" variant="secondary" className="text-lg px-8 hover:scale-105 transition-transform">
             Explore Collection
           </Button>
-          <Button size="lg" className="text-lg px-10 py-6 bg-primary-foreground/20 backdrop-blur-md text-white border-2 border-white hover:bg-white hover:text-primary hover:scale-105 transition-all shadow-2xl font-semibold">
+          <Button size="lg" variant="outline" className="text-lg px-8 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover:scale-105 transition-all">
             Contact Us
           </Button>
         </div>
       </div>
 
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-primary-foreground drop-shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-primary-foreground">
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
         </svg>
       </div>
