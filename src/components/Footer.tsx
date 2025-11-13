@@ -1,3 +1,5 @@
+import { Facebook, Instagram, Twitter, Mail } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-primary via-accent to-primary text-primary-foreground py-16">
@@ -30,8 +32,22 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-primary-foreground/20 pt-8 text-center text-primary-foreground/80">
-          <p>&copy; 2024 Souvenir Haven. All rights reserved.</p>
+        <div className="border-t border-primary-foreground/20 pt-8">
+          <div className="flex justify-center gap-6 mb-6">
+            <a href="#" className="hover:scale-110 transition-transform" aria-label="Facebook">
+              <Facebook className="w-6 h-6 text-primary-foreground hover:text-primary-foreground/80" />
+            </a>
+            <a href="#" className="hover:scale-110 transition-transform" aria-label="Instagram">
+              <Instagram className="w-6 h-6 text-primary-foreground hover:text-primary-foreground/80" />
+            </a>
+            <a href="#" className="hover:scale-110 transition-transform" aria-label="Twitter">
+              <Twitter className="w-6 h-6 text-primary-foreground hover:text-primary-foreground/80" />
+            </a>
+            <a href="#" className="hover:scale-110 transition-transform" aria-label="Email">
+              <Mail className="w-6 h-6 text-primary-foreground hover:text-primary-foreground/80" />
+            </a>
+          </div>
+          <p className="text-center text-primary-foreground/80">&copy; 2024 Souvenir Haven. All rights reserved.</p>
         </div>
       </div>
     </footer>
