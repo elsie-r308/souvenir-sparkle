@@ -84,9 +84,9 @@ const Products = () => {
       </div>
 
       <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
-        <DialogContent className="max-w-4xl">
+        <DialogContent className="max-w-2xl">
           <DialogHeader>
-            <DialogTitle className="text-3xl font-bold text-primary">
+            <DialogTitle className="text-2xl font-bold text-primary">
               {selectedProduct?.title}
             </DialogTitle>
           </DialogHeader>
@@ -99,7 +99,7 @@ const Products = () => {
                       <img 
                         src={sample} 
                         alt={`${selectedProduct.title} sample ${index + 1}`}
-                        className="w-full h-[500px] object-cover rounded-lg"
+                        className="w-full h-[350px] object-cover rounded-lg"
                       />
                     </div>
                   </CarouselItem>
