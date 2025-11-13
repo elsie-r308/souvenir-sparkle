@@ -1,4 +1,7 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import magnetsImg from "@/assets/magnets.jpg";
 import postcardsImg from "@/assets/postcards.jpg";
 import keychainsImg from "@/assets/keychains.jpg";
@@ -9,25 +12,30 @@ const products = [
     title: "Magnets",
     description: "Collectible magnets from destinations worldwide",
     image: magnetsImg,
+    samples: [magnetsImg, magnetsImg, magnetsImg], // You can add more sample images here
   },
   {
     title: "Postcards",
     description: "Vintage and modern postcards capturing iconic moments",
     image: postcardsImg,
+    samples: [postcardsImg, postcardsImg, postcardsImg],
   },
   {
     title: "Keychains",
     description: "Unique keychains and charms from every corner of the globe",
     image: keychainsImg,
+    samples: [keychainsImg, keychainsImg, keychainsImg],
   },
   {
     title: "Handcrafted Items",
     description: "Artisan-made treasures showcasing traditional craftsmanship",
     image: craftsImg,
+    samples: [craftsImg, craftsImg, craftsImg],
   },
 ];
 
 const Products = () => {
+  const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
   return (
     <section className="py-24 bg-gradient-to-b from-secondary/30 to-background">
       <div className="container mx-auto px-4">
@@ -52,6 +60,7 @@ const Products = () => {
                 opacity: 0,
                 animationFillMode: 'forwards'
               }}
+              onClick={() => setSelectedProduct(product)}
             >
               <div className="overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
@@ -73,6 +82,38 @@ const Products = () => {
           ))}
         </div>
       </div>
+
+      <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
+        <DialogContent className="max-w-4xl">
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-bold text-primary">
+              {selectedProduct?.title}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="mt-4">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {selectedProduct?.samples.map((sample, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      <img 
+                        src={sample} 
+                        alt={`${selectedProduct.title} sample ${index + 1}`}
+                        className="w-full h-[500px] object-cover rounded-lg"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
+            <p className="text-muted-foreground mt-4 text-center">
+              {selectedProduct?.description}
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
