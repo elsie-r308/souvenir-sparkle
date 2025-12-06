@@ -6,13 +6,16 @@ import magnetsImg from "@/assets/magnets.jpg";
 import postcardsImg from "@/assets/postcards.jpg";
 import keychainsImg from "@/assets/keychains.jpg";
 import craftsImg from "@/assets/crafts.jpg";
+import watchesImg from "@/assets/watches.jpg";
+import totebagsImg from "@/assets/totebags.jpg";
+import giftboxesImg from "@/assets/giftboxes.jpg";
 
 const products = [
   {
     title: "Magnets",
     description: "Collectible magnets from destinations worldwide",
     image: magnetsImg,
-    samples: [magnetsImg, magnetsImg, magnetsImg], // You can add more sample images here
+    samples: [magnetsImg, magnetsImg, magnetsImg],
   },
   {
     title: "Postcards",
@@ -31,6 +34,24 @@ const products = [
     description: "Artisan-made treasures showcasing traditional craftsmanship",
     image: craftsImg,
     samples: [craftsImg, craftsImg, craftsImg],
+  },
+  {
+    title: "Watches",
+    description: "Elegant timepieces with signature red accents",
+    image: watchesImg,
+    samples: [watchesImg, watchesImg, watchesImg],
+  },
+  {
+    title: "Tote Bags",
+    description: "Stylish canvas bags with travel-inspired designs",
+    image: totebagsImg,
+    samples: [totebagsImg, totebagsImg, totebagsImg],
+  },
+  {
+    title: "Gift Boxes",
+    description: "Premium gift packaging with elegant red ribbons",
+    image: giftboxesImg,
+    samples: [giftboxesImg, giftboxesImg, giftboxesImg],
   },
 ];
 
